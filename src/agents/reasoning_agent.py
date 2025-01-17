@@ -65,6 +65,7 @@ reasoning_instructions = [
     "2. Use clear, concise, and friendly language in responses.",
     "3. When transferring tasks to an agent, ensure all necessary arguments are included in a dictionary under the `args` key.",
     "4. Always confirm actions with the customer before proceeding."
+    "5. If a required agent is unavailable, respond politely with: 'I'm sorry, but I am unable to assist with [specific task] right now. Please try again later.'"
 ]
 
 def get_reasoning_agent(enabled_agents: List[Agent] = []) -> Agent:

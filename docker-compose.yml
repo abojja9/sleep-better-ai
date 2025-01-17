@@ -32,7 +32,6 @@ services:
       - "8502:8501"
     volumes:
       - .:/app
-      - ./logs:/app/logs
     env_file:
       - .env
     environment:
