@@ -104,7 +104,7 @@ The system implements a multi-agent architecture with the following key componen
 ### Environment Setup
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/abojja9/sleep-better-ai
 cd sleep-better-ai
 ```
 
