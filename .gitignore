@@ -89,7 +89,6 @@ Thumbs.db
 *.swo
 *.swn
 
-!qdrant_data/.gitignore
 !logs/.gitignore
 ./data/*.db
 ./data/db/orders.sqlite

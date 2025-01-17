@@ -111,8 +111,10 @@ cd sleep-better-ai
 2. Create `.env` file:
 ```bash
 cp .env.example .env
-# Update with your OpenAI API key and other configurations
 ```
+
+### NOTE: Update with your OpenAI API key in .env file
+
 
 ### Database Setup
 The application uses two databases:
