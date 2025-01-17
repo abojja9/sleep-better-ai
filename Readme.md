@@ -60,7 +60,7 @@ The system implements a multi-agent architecture with the following key componen
   - PostgreSQL with pgvector extension (for vector storage)
   - SQLite (for order management)
 - **AI/ML**: 
-  - OpenAI GPT-4 for conversation
+  - OpenAI GPT-4o for conversation
   - OpenAI Embeddings for vector search
 - **Docker**: For containerization and deployment
 - **Vector Search**: pgvector for similarity search

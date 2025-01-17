@@ -92,3 +92,4 @@ Thumbs.db
 !logs/.gitignore
 ./data/*.db
 ./data/db/orders.sqlite
+!data/db/.gitignore
