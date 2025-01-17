@@ -1,0 +1,28 @@
+{
+    "database": {
+        "url": "postgresql+psycopg://ai:ai@pgvector:5432/ai",
+        "orders_path": "data/db/orders.sqlite",
+        "collections": {
+            "product_details": "product_details_vectors",
+            "product_reviews": "product_reviews_vectors"
+        }
+    },
+    "data": {
+        "product_catalog": "data/SWE-GenAI_Take_Home/Sleep_Better_Product_Catalog.pdf",
+        "product_reviews": "data/SWE-GenAI_Take_Home/Sleep_Better_Product_Reviews.pdf"
+    },
+    "agents": {
+        "product_details": {
+            "enabled": true,
+            "model": "gpt-4o"
+        },
+        "product_reviews": {
+            "enabled": true,
+            "model": "gpt-4o"
+        },
+        "orders": {
+            "enabled": true,
+            "model": "gpt-4o"
+        }
+    }
+}

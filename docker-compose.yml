@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  pgvector:
+    image: phidata/pgvector:16
+    container_name: pgvector
+    environment:
+      - POSTGRES_DB=ai
+      - POSTGRES_USER=ai
+      - POSTGRES_PASSWORD=ai
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - "5532:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai -d ai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sleep_better_backend
+    depends_on:
+      - pgvector
+    command: streamlit run src/interface/app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8502:8501"
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql+psycopg://ai:ai@pgvector:5432/ai
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app:$PYTHONPATH
+    restart: always
+
+volumes:
+  pgdata:
+  logs:
